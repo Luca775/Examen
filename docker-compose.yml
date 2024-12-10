@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  frontend:
+    image: luca775/imagen-front
+    container_name: contenedor-front
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+  backend:
+    image: luca775/imagen-back 
+    container_name: contenedor-back
+    ports:
+      - "8001:8001"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
