@@ -25,10 +25,7 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/imagen-back:latest .
-      # 4. Subir la imagen a Docker Hub
-    - name: tag Docker image
-      run: |
-        docker tag imagen-back ${{ secrets.DOCKER_USERNAME }}/imagen-back:latest
+
     # 4. Subir la imagen a Docker Hub
     - name: Push Docker image
       run: |
